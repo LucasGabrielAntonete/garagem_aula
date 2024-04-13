@@ -1,0 +1,20 @@
+[project]
+name = "garagem_aula"
+version = "0.1.0"
+description = "Default template for PDM package"
+authors = [
+    {name = "LucasGabrielAntonete", email = "lucasantonete@gmail.com"},
+]
+dependencies = [
+    "django>=5.0.4",
+    "setuptools>=69.2.0",
+    "djangorestframework>=3.15.1",
+    "django-cors-headers>=4.3.1",
+]
+requires-python = "==3.11.*"
+readme = "README.md"
+license = {text = "MIT"}
+
+
+[tool.pdm]
+distribution = false
