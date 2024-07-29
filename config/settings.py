@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     "corsheaders",
     "rest_framework",
-    "garagem",
+    "core.garagem",
+    "core.usuario",
 ]
 
 MIDDLEWARE = [
@@ -72,6 +73,16 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'config.wsgi.application'
+
+
+REST_FRAMEWORK = {
+    "DEFAULT_AUTHENTICATION_CLASSES": ("core.usuario.authentication.TokenAuthentication",),
+    # "DEFAULT_PERMISSION_CLASSES": ("rest_framework.permissions.IsAuthenticatedOrReadOnly",),
+    "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
+    "PAGE_SIZE": 10,
+}
+
 
 
 # Database
@@ -125,3 +136,9 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CORS_ALLOW_ALL_ORIGINS = True
+
+AUTH_USER_MODEL = "usuario.Usuario"
+
+PASSAGE_APP_ID = '2TXjjhFWhntb7WqVkG46xAmb'
+PASSAGE_API_KEY = 'PPQgcwYWJW.709FG9YYUZ3tMU3gAXIk0Tc2TqhD8IFAdIBa7A3XG2QJ5DVvnvOegad5JnObywdr'
+PASSAGE_AUTH_STRATEGY = 2

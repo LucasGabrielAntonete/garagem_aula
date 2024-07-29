@@ -1,5 +1,5 @@
 from rest_framework.serializers import ModelSerializer
-from garagem.models import Categoria
+from core.garagem.models import Categoria
 
 class CategoriaSerializer(ModelSerializer):
     class Meta:

@@ -17,7 +17,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include 
 from rest_framework.routers import DefaultRouter
-from garagem.views import CategoriaViewSet, CorViewSet, MarcaViewSet, AcessorioViewSet
+from core.garagem.views import CategoriaViewSet, CorViewSet, MarcaViewSet, AcessorioViewSet
+from core.usuario.router import router as usuario_router
 
 router = DefaultRouter()
 router.register(r"categorias", CategoriaViewSet)
@@ -28,5 +29,6 @@ router.register(r"acessorios", AcessorioViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include(router.urls))  
+    path('api/', include(router.urls)),
+    path('api/', include(usuario_router.urls)),
 ]

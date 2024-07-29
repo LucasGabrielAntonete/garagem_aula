@@ -1,5 +1,5 @@
 from rest_framework.serializers import ModelSerializer
-from garagem.models import Acessorio
+from core.garagem.models import Acessorio
 
 class AcessorioSerializer(ModelSerializer):
     class Meta:

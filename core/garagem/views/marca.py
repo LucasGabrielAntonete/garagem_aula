@@ -1,7 +1,7 @@
 from rest_framework.viewsets import ModelViewSet
 
-from garagem.models import Marca
-from garagem.serializers import MarcaSerializer
+from core.garagem.models import Marca
+from core.garagem.serializers import MarcaSerializer
 
 class MarcaViewSet(ModelViewSet):
     queryset = Marca.objects.all()

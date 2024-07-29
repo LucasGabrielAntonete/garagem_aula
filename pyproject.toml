@@ -6,10 +6,15 @@ authors = [
     {name = "LucasGabrielAntonete", email = "lucasantonete@gmail.com"},
 ]
 dependencies = [
-    "django>=5.0.4",
-    "setuptools>=69.2.0",
+    "django>=4.2.13",
+    "setuptools>=71.1.0",
     "djangorestframework>=3.15.1",
     "django-cors-headers>=4.3.1",
+    "drf-spectacular>=0.27.2",
+    "passage-identity>=2.5.0",
+    "openapi>=2.0.0",
+    "openapi-client>=1.1.7",
+    "openapi-python-client>=0.21.1",
 ]
 requires-python = "==3.11.*"
 readme = "README.md"
@@ -18,3 +23,11 @@ license = {text = "MIT"}
 
 [tool.pdm]
 distribution = false
+
+
+[tool.pdm.scripts]
+dev = "python manage.py runserver localhost:8000"
+runserver = "python manage.py runserver"
+createsuperuser = "python manage.py createsuperuser"
+migrate = "python manage.py migrate"
+makemigrations = "python manage.py makemigrations"
