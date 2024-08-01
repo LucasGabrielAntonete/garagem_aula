@@ -5,4 +5,4 @@ class Acessorio(models.Model):
     descricao = models.TextField()
 
     def __str__(self):
-        return self.nome
+        return self.nome.upper()
